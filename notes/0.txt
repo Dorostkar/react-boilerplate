@@ -1,0 +1,16 @@
+create package.json
+install node modules
+create src folder
+add index.html the start point
+add index.js entry point for our javascript
+create webpack.config.dev.js file in the root of the project (this is for dev version) later we will create producti
+create editor config file in root .editorconfig
+create bable config file in root .babelrc
+create a server with express to run this project.
+create tools folder in root then create srcServer.js
+create npm script to fire project
+create prestart message in tools folder and get help from color library to make it colorful then add prestart script to scripts
+use eslint for best practise catch mistakes....
+create eslint file in root folder .eslintrc
+create lin script in package.json scripts
+adding test config testSetup.js and then add the require script in package.json
