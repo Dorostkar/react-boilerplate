@@ -1,15 +1,15 @@
-import React,{PropTypes} from 'react';
-import {Link,IndexLink} from 'react-router';
+import React from 'react';
+import {NavLink,IndexLink} from 'react-router-dom';
 
 const Header = () => {
     return (
         <nav>
             {/* when is active applly active class in css */}
-            <IndexLink to="/" activeClassName="active">Home</IndexLink> 
+            <NavLink to="/" activeClassName="active">Home</NavLink> 
             {" | "}
-            <Link to="/courses" activeClassName="active">Courses</Link>
+            <NavLink to="/courses" activeClassName="active">Courses</NavLink>
             {" | "}
-            <Link to="/about" activeClassName="active">About</Link>
+            <NavLink to="/about" activeClassName="active">About</NavLink>
         </nav>
     );
 };
