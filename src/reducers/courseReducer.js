@@ -1,7 +1,7 @@
 export default (state = [], action) => {
   switch (action.type) {
     case "CREATE_COURSE":
-      return [...state, action.course];
+      return [...state, Object.assign({},action.course)];
     default:
       return state;
   }
