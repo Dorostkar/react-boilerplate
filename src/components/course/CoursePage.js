@@ -1,28 +1,28 @@
 import React, { Component } from "react";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import * as courseActions from '../../actions/courseActions';
+import * as courseActions from "../../actions/courseActions";
 class CoursePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        course: { title: "" }
+      course: { title: "" }
     };
-}
+  }
 
-  onTitleChange=(event)=>{
-    const course=this.state.course;
-    course.title=event.target.value;
-    this.setState({course:course})
+  onTitleChange = event => {
+    const course = this.state.course;
+    course.title = event.target.value;
+    this.setState({ course: course });
   };
 
-  onClickSave=(event)=>{
-     this.props.dispatch(courseActions.createCourse(this.state.course));
+  onClickSave = event => {
+    this.props.createCourse(this.state.course)
   };
 
-  courseRow=(course,index)=>{
-    return <div key={index}>{course.title}</div>
+  courseRow = (course, index) => {
+    return <div key={index}>{course.title}</div>;
   };
 
   render() {
@@ -42,14 +42,21 @@ class CoursePage extends Component {
   }
 }
 
-CoursePage.protoTypes={
-  dispatch:PropTypes.func.isRequired,
-  courses:PropTypes.array.isRequired
+CoursePage.protoTypes = {
+  dispatch: PropTypes.func.isRequired,
+  courses: PropTypes.array.isRequired
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    createCourse: course => dispatch(courseActions.createCourse(course))
+  };
 }
 
-function mapStateToProps(state,ownProps){
+function mapStateToProps(state, ownProps) {
   return {
-    courses:state.courses
-  }
+    courses: state.courses
+  };
 }
-export default connect(mapStateToProps)(CoursePage);
+
+export default connect(mapStateToProps,mapDispatchToProps)(CoursePage);
