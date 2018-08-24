@@ -5,11 +5,11 @@
   "author": "Cory House",
   "license": "MIT",
   "scripts": {
-    "startn": "webpack-dev-server --mode development --open --hot",
+    "startn": "webpack-dev-server --mode development ",
     "startnn": "webpack --mode development --watch",
     "buildn": "webpack --mode production",
     "prestart": "babel-node tools/prestartMessage.js",
-    "start": "npm-run-all --parallel startn lint:watch ",
+    "start": "npm-run-all --parallel startn ",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
