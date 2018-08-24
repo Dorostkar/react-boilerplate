@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink,IndexLink} from 'react-router-dom';
+import LoadingDots from './LoadingDots';
 
 const Header = () => {
     return (
@@ -10,6 +11,7 @@ const Header = () => {
             <NavLink to="/courses" activeClassName="active">Courses</NavLink>
             {" | "}
             <NavLink to="/about" activeClassName="active">About</NavLink>
+            <LoadingDots interval={120} dots={20}/>
         </nav>
     );
 };
